@@ -1,11 +1,23 @@
 require 'rails_helper'
 
-RSpec.describe DirectorController, type: :controller do
+RSpec.describe MoviesController, type: :controller do
     
-    before :each do
-        fake_movie = mock('Movie')
-        fake_movie.stub(:title).and_return('Casablanca')
-        fake_movie.stub(:rating).and_return('PG')
-        fake_movie.name_with_rating.should == 'Casablanca (PG)'
-    end
+#     before :each do
+#         movie = double('Movie', key?: true, title: 'Casablanca', rating: 'PG', id: 100)
+#     end
+    
+#     describe 'edit existing moive' do
+#         before :each do
+# 			Movie.should_receive(:find).with(@fake_movie).and_return(@fake_movie)
+#  			@fake_movie.should_receive(:update_attributes!).exactly 1
+# 		end
+
+#         it 'should redirect to details template for rendering' do
+# 			response.should redirect_to(movie_path @fake_movie)
+# 		end
+		
+# 		it 'should make updated info available to template' do
+# 			assigns(:movie).should == @fake_movie
+# 		end
+# 	end
 end

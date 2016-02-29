@@ -55,3 +55,8 @@ Then /I should not see movies of ratings: (.*)/ do |rating_list|
     page.body.should_not match(/<td>#{rating}<\/td>/)
   end
 end
+
+Then /the director of "(.*)" should be "(.*)"/ do |movie, director|
+  m = Movie.find_by(title: movie)
+  expect(m.director).to eq(director)
+end
