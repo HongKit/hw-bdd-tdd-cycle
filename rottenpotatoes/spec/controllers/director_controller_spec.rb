@@ -1,23 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe MoviesController, type: :controller do
-    
-#     before :each do
-#         movie = double('Movie', key?: true, title: 'Casablanca', rating: 'PG', id: 100)
-#     end
-    
-#     describe 'edit existing moive' do
-#         before :each do
-# 			Movie.should_receive(:find).with(@fake_movie).and_return(@fake_movie)
-#  			@fake_movie.should_receive(:update_attributes!).exactly 1
-# 		end
-
-#         it 'should redirect to details template for rendering' do
-# 			response.should redirect_to(movie_path @fake_movie)
-# 		end
-		
-# 		it 'should make updated info available to template' do
-# 			assigns(:movie).should == @fake_movie
-# 		end
-# 	end
+    describe 'editing movies director' do
+    	context 'when we press the edit page of a movie' do
+        	it 'should render a page with a field director' do
+        		movie = Movie.create{ {title: "Faker", rating: "R", director: "Faker Director", release_date: 10.years.ago, description: "None"} }
+        		get :edit, :id => '1'
+        		expect(response).to render_template(:edit)
+        		# expect(response.body).to include("Director")
+        	end
+        end
+    end
 end
